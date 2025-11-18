@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${etudiant.id == null} ? 'Nouvel Étudiant' : 'Modifier Étudiant'"></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 th:text="${etudiant.id == null} ? 'Ajouter un Étudiant' : 'Modifier l\'Étudiant'"></h3>
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/etudiants/save}" method="post">
+
+                        <!-- ID caché pour l'édition -->
+                        <input type="hidden" name="id" th:value="${etudiant?.id}" />
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nom</label>
+                                <input type="text" name="nom" class="form-control" required
+                                       th:value="${etudiant?.nom}" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Prénom</label>
+                                <input type="text" name="prenom" class="form-control" required
+                                       th:value="${etudiant?.prenom}" />
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Date de naissance</label>
+                                <input type="date" name="dateNaissance" class="form-control" required
+                                       th:value="${etudiant?.dateNaissance}" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Sexe</label>
+                                <select name="sexe" class="form-select" required>
+                                    <option value="Garçon" th:selected="${etudiant?.sexe == 'Garçon'}">Garçon</option>
+                                    <option value="Fille" th:selected="${etudiant?.sexe == 'Fille'}">Fille</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nom du parent</label>
+                                <input type="text" name="nomParent" class="form-control" required
+                                       th:value="${etudiant?.nomParent}" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Téléphone parent</label>
+                                <input type="text" name="telephoneParent" class="form-control" required
+                                       th:value="${etudiant?.telParent}" placeholder="06 XX XX XX XX" />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Photo (chemin)</label>
+                            <input type="text" name="photo" class="form-control" required
+                                   placeholder="ex: images/ayoub.jpg"
+                                   th:value="${etudiant?.photo}" />
+                            <small class="text-muted">
+                                Mettre le chemin complet comme : <code>images/nom.jpg</code>
+                            </small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Classe</label>
+                            <select name="classeId" class="form-select" required>
+                                <option value="">-- Choisir une classe --</option>
+                                <option th:each="c : ${classes}"
+                                        th:value="${c.id}"
+                                        th:text="${c.libelle + ' - ' + c.niveau + ' (' + c.anneeScolaire + ')'}"
+                                        th:selected="${etudiant?.classe?.id == c.id}">
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Enregistrer</button>
+                            <a th:href="@{/etudiants}" class="btn btn-secondary btn-lg">Annuler</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a th:href="@{/home}" class="btn btn-outline-primary">Retour à l'accueil</a>
+    </div>
+</div>
+</body>
+</html>
