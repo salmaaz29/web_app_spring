@@ -5,7 +5,7 @@ Mise en place d’une application web MVC Spring Boot complète utilisant :
 - Spring Data JPA + Hibernate
 - MySQL
 - Thymeleaf
-- Bootstrap 5 + Bootstrap Icons
+- Bootstrap 5 
 - Architecture en couches (Controller → Service → Repository → Entity)
 
 Fonctionnalités implémentées :
@@ -38,7 +38,7 @@ src/
 │   └── controller/    → EtudiantController, ClasseController, AbsenceController
 └── resources/
 ├── static/images/ → Photos des étudiants (déjà incluses)
-├── templates/     → Pages HTML Thymeleaf (design moderne)
+├── templates/     → Pages HTML Thymeleaf
 └── application.properties
  ```
 ## Prérequis
