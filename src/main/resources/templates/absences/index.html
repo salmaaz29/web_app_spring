@@ -16,8 +16,8 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" th:each="e : ${etudiants}">
       <div class="card h-100 shadow-sm text-center">
-        <img th:src="@{/${e.photo}}" class="card-img-top" style="height: 200px; object-fit: cover;"
-             alt="Photo" onerror="this.src='/images/default.jpg'">
+        <img th:src="@{'/images/' + ${e.photo}}" class="card-img-top" style="height: 200px; object-fit: cover;"
+             alt="Photo" onerror="this.src='/images/default.png'">
         <div class="card-body">
           <h5 class="card-title" th:text="${e.nom + ' ' + e.prenom}"></h5>
           <p class="card-text">

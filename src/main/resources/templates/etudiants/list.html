@@ -27,10 +27,10 @@
     <div class="row row-cols-1 row-cols-md-3 g-4" th:unless="${etudiants.isEmpty()}">
         <div class="col" th:each="e : ${etudiants}">
             <div class="card h-100 shadow-sm">
-                <img th:src="@{/${e.photo}}"
+                <img th:src="@{'/images/' + ${e.photo}}"
                      class="card-img-top"
                      alt="Photo de l'étudiant"
-                     onerror="this.src='/images/default.jpg'">
+                     onerror="this.src='/images/default.png'">
                 <div class="card-body">
                     <h5 class="card-title fw-bold" th:text="${e.nom + ' ' + e.prenom}"></h5>
                     <p class="card-text">

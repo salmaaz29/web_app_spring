@@ -57,7 +57,7 @@ public class ClasseController {
     public String editForm(@PathVariable Long id, Model model) {
         Classe classe = classeService.findById(id);
 
-        // Si la classe n'existe pas → redirection avec message d'erreur (facultatif mais propre)
+
         if (classe == null) {
             return "redirect:/classes";
         }

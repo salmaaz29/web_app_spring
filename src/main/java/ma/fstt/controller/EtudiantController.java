@@ -51,7 +51,7 @@ public class EtudiantController {
             @RequestParam String sexe,
             @RequestParam String nomParent,
             @RequestParam String telephoneParent,
-            @RequestParam String photo,              // ← URL de l'image (ex: images/ali.jpg)
+            @RequestParam String photo,              // ← URL de l'image (ex: ali.jpg)
             @RequestParam Long classeId) {
 
         Etudiant etudiant;

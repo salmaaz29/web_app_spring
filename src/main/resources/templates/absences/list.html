@@ -118,7 +118,6 @@
                     </td>
                     <td th:text="${a.motif ?: '-'}"></td>
                     <td>
-                        <!-- Tu peux ajouter un bouton "Modifier" si tu veux -->
                         <a th:href="@{'/absences/' + ${a.id} + '/delete'}"
                            onclick="return confirm('Supprimer cette absence ?')"
                            class="btn btn-danger btn-sm">Supprimer</a>

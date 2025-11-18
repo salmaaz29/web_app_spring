@@ -11,8 +11,8 @@
 
     <form th:action="@{/classes/save}" method="post" class="bg-white p-4 rounded shadow">
 
-        <!-- Champ caché pour l'id (très important pour l'édition) -->
-        <input type="hidden" name="id"
+        <!-- Champ caché pour l'id pour l'édition) -->
+        <input type="hidden" name="id_classe"
                th:value="${classe != null ? classe.id : ''}" />
 
         <div class="mb-3">

@@ -56,7 +56,7 @@ public class AbsenceController {
         if (id_abs != null && id_abs > 0) {
             absence = absenceService.findById(id_abs);
             if (absence == null) {
-                absence = new Absence(); // sécurité
+                absence = new Absence();
             }
         } else {
             absence = new Absence();
