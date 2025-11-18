@@ -1,4 +1,4 @@
-# Gestion des Absences - École Maternelle  
+# Gestion- École Maternelle  
 ## Objectif
 Mise en place d’une application web MVC Spring Boot complète utilisant :
 - Spring Boot 3.x
@@ -50,8 +50,8 @@ src/
 
 1. **Cloner le projet**
    ```
-   git clone 
-   cd 
+   git clone https://github.com/salmaaz29/web_app_spring.git
+   cd web_app_spring
     ```
 2. **Configurer MySQLSQL**
    ```
