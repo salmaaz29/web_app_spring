@@ -1,7 +1,7 @@
 # Gestion- École Maternelle  
 ## Objectif
 Mise en place d’une application web MVC Spring Boot complète utilisant :
-- Spring Boot 3.x
+- Spring Boot 3.5.7
 - Spring Data JPA + Hibernate
 - MySQL
 - Thymeleaf
@@ -22,7 +22,7 @@ Fonctionnalités implémentées :
 | Absences           | Gérer les absences par étudiant (date, heure début/fin, justification, motif)  |
 
 ## Technologies utilisées
-- **Backend** : Java 17, Spring Boot 3.2+, Spring Data JPA, Lombok
+- **Backend** : Java 17, Spring Boot 3.5.7, Spring Data JPA, Lombok
 - **Base de données** : MySQL 8.0
 - **Frontend** : Thymeleaf, Bootstrap 5.3, Bootstrap Icons
 - **Build** : Maven
